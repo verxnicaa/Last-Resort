@@ -10,13 +10,6 @@ public class PlayerScriptVM : MonoBehaviour
 
     int allIngredientsCollected = 1;
     int allEnemiesDefeated = 1;
-    SceneLoaderVM sceneLoader;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        sceneLoader = GetComponent<SceneLoaderVM>();
-    }
 
     // Update is called once per frame
     void Update()
