@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class PlayerScriptVM : MonoBehaviour
 {
-    bool hasSpecialIngredient = false;
     public Text announcement;
 
     int allIngredientsCollected = 1;
