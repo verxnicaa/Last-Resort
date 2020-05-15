@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class IngredientsVM : MonoBehaviour
 {
-
     int scoreDecrease = 1;
-
     IngredientsScoreBoardVM ingredientsScoreBoard;
+    public AudioClip pickupSound;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +24,7 @@ public class IngredientsVM : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position);
             Destroy(gameObject);
             ingredientsScoreBoard.Collected(scoreDecrease);
         }

@@ -10,6 +10,12 @@ public class PlayerScriptVM : MonoBehaviour
 
     int allIngredientsCollected = 1;
     int allEnemiesDefeated = 1;
+    public Image announcementBG;
+
+    void Start()
+    {
+        announcementBG.enabled = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,6 +35,7 @@ public class PlayerScriptVM : MonoBehaviour
             }
             if (allIngredientsCollected != 0)
             {
+                announcementBG.enabled = true;
                 announcement.text = "COLLECT ALL SPECIAL INGREDIENTS AND KILL ALL ZOMBIES TO CONTINUE";
                 Invoke("ResetText", 5f);
             }
@@ -39,6 +46,7 @@ public class PlayerScriptVM : MonoBehaviour
     void ResetText()
     {
         announcement.text = "";
+        announcementBG.enabled = false;
     }
 
     public void UpdateChecklist(int ingredientsRemaining)
